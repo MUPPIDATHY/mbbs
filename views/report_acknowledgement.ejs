@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ponmari_Sample</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/assets/dashboard/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- bootsrtap -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/assets/dashboard/dist/css/alter.css">
+  <link rel="stylesheet" href="/assets/dashboard/dist/css/mbbs.css">
+  <!-- Google Font Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro300,400,400i,700" rel="stylesheet">
+  <style>
+    #li{
+      font-weight: 400;
+    }
+    @media print{
+     
+      body{
+    transform:scale(1.3)!important;
+
+  }
+      body{
+        margin-top: 130px!important;
+      }
+     
+    }
+  </style>
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="toolbar no-print">
+      <button class="btn btn-info" onclick="window.print()">
+        Print Certificate
+      </button>
+    </div>
+   
+<section id="report"class="blue ">
+  <div class="container d-flex justify-content-center">
+    <div id="reportcard">
+          <div class=" m-4 p-3"id="">
+            <div class="row text-center"id="top">
+              <div class="col-md-2 text-center"><img src="assets/img/r1.jpg"class="img-fluid"width="150"></div>
+              <div class="col-md-7"id="topcenter"><h2 class="other-font ">Tirunelveli Medical College<br><span class="tvl">Tirunelveli,</span></h2>
+                <h5 class="blue margin"id="state"><span class="blue margin">STATE OF TAMILNADU, INDIA<BR>PINCODE:627011</span></h5>
+                      <h5 class="text-center margin"id="addrep1"><strong class="blue margin"id="addrep">
+              Tel: 91-462-2572733, 257273 Fax: 91-462-2572944</strong>
+              </h5>
+              <p id="newadd"class="margin">Under the Directorate of Medical Education, Government of Tamilnadu, Chennai-10
+              Affliated with the Tamil Nadu Dr.M.G.R. Medical University, Guindy, Chennai-32
+              Recognized by the Medical Council of India, New Delhi.
+              </p>
+              </div>
+              <div class="col-md-3 text-right"><img src="assets/img/logo.gif"class="img-fluid"width="135"></div>
+              </div>
+
+      <br />
+          <hr id="margint"> 
+          <h4 class="text-center text-dark"><strong> 
+<u style="font-family:normal;font-size:18px">ACKNOWLEDGEMENT</u>
+</strong></h4>
+  <br />
+ 
+  <h5><span class="text-dark"style="font-family:normal;font-size:18px;font-weight: 400;">RECEIVED THE FOLLOWING ORIGINAL CERTIFICATES ON <u><%=ack_date%></u></span>
+</h5><br>
+
+<ul id="li">
+  
+
+                                  <%
+                                  if(userData27.length!=0){
+                                  var i=1;
+                                  userData27.forEach(function(classdata27){
+                                  %>
+                                  <li><p><%=classdata27.certificate %></p></li>
+                                  <%  i++; }) %>
+                                  <% } else{ %>
+                              
+                                  <% } %>
+<!--   <li><p>FEE RECEIPT</p></li>
+    <li><p>10TH MARK SHEET</p></li>
+  <li><p>10TH PASS CERTIFICATE
+</p></li>
+  <li><p>12TH MARK SHEET
+</p></li>
+  <li><p> 12TH PASS CERTIFICATE
+</p></li>
+  <li><p>COMMUNITY CERTIFICATE</p></li>
+  <li><p>TRANSFER CERTIFICATE</p></li>
+  <li><p>CONDUCT CERTIFICATE
+</p></li>
+  <li><p>MIGRATION CERTIFICATE</p></li>
+  <li><p> ELIGIBILITY CERTIFICATE</p></li>
+  <li><p>PHYSICAL WITH DISABILITY CERTIFICATE</p></li>
+  <li><p> PHYSICALLY CHALANGED CERTIFICATE</p></li> -->
+  <br><br>
+<li style="list-style: none;">
+  <div class="row"id="ack">
+    <div class="col-md-3">
+<p>Candidate Name:</p>
+<p>Father Name :
+</p>
+<p>Mother Name:</p>
+<p>Address:</p>
+    </div>
+    <div class="col-md-5"id="ackadd1">
+      <%
+if(userData.length!=0){
+var i=1;
+userData.forEach(function(classdata){
+%>
+      <p><%=classdata.name %></p>
+            <p><%=classdata.father_name %></p>
+      <p><%=classdata.mother_name %></p>
+      <%
+      if(userData2.length!=0){
+      var i=1;
+      userData2.forEach(function(classdata2){
+      %>
+      <p><address>
+        <%=classdata2.ps_address %>,</address></p>
+      <p><address><%=classdata2.ps_pincode %></address></p>
+      <p><address><%=classdata2.ps_state %></address></p>
+      <p><address><%=classdata2.ps_district %></address></p>
+      <%  i++; }) %>
+      <% } else{ %>
+      
+      <% } %>
+      <%  i++; }) %>
+      <% } else{ %>
+      
+      <% } %>
+    
+    </div>
+     <div class="col-md-4">
+      <p>Signature of the Candidate</p>
+    
+      
+    </div>
+  </div>
+</li>
+</ul>
+  
+  </div>
+  
+</div>
+</div>
+</section>
+
+
+
+
+ 
+<!-- jQuery bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+UPLOADCARE_PUBLIC_KEY = 'demopublickey';
+</script>
+<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>
+<!-- AdminLTE App -->
+<script src="js/adminlte.js"></script>
+<script src="js/mbbs.js"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="js/demo.js"></script>
+<!-- page script -->
+
+
+</body>
+
+</html>
